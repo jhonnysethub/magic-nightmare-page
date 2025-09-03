@@ -1,0 +1,190 @@
+@font-face {
+  font-family: "Pixellari";
+  src: url("Pixellari.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Pixellari, sans-serif; 
+  background-color: #5f2d9b;
+  color: white;
+}
+
+/* Cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4c247c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  flex-wrap: wrap;
+  font-family: "Paytone One", sans-serif; 
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo-area img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+nav {
+  margin-right: 10%;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: "Pixellari", sans-serif; /* muda a fonte dos links */
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Conteúdo */
+main {
+  padding-top: 80px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  padding: 50px 20px;
+}
+
+section h2 {
+  color: #ffffff;
+  font-family: "Paytone One", sans-serif;
+  font-weight: 800;
+}
+
+.capa-img,
+.sobre-img,
+.recursos-img,
+.personagens-img,
+.fim-img,
+.gameplay-img {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.carrossel {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carrossel img {
+  width: 100%;
+  display: none;
+}
+
+.carrossel img.active {
+  display: block;
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.carrossel-btn.left {
+  left: 10px;
+}
+
+.carrossel-btn.right {
+  right: 10px;
+}
+
+.botoes-compra {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.botoes-compra a {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  background-color: #ffcc00;
+  color: black;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.botoes-compra a:hover {
+  background-color: #ffaa00;
+}
+
+footer {
+  background-color: #4c247c;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+section {
+  padding: 50px 20px;
+  scroll-margin-top: 90px;
+}
+
+.gameplay-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  max-width: 800px;
+  margin: auto;
+}
+
+.gameplay-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.gameplay-wrapper iframe {
+  position: absolute;
+  width: 400px;   /* mesmo tamanho que você usou antes */
+  height: 265px;
+  border: none;
+}
+
+
