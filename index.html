@@ -1,104 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magic Nightmare - jogo de terror</title>
+    <title>Magic Nightmare</title>
+    <link rel="stylesheet" href="/styles/main.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="imagens/logo.png" type="image/png" />
   </head>
   <body>
-    <header>
+    <audio id="musica-fundo" loop>
+      <source src="audio/primeiro-despertar.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+ 
+    <header class="cine-header">
       <div class="logo-area">
-        <img src="imagens/loogo.svg" alt="Logo" />
-        <h1>Magic Nightmare</h1>
+        <img src="imagens/logo2.png" alt="Magic Nightmare Logo" />
       </div>
+
       <nav>
-        <a href="#sobre">Sobre o jogo</a>
-        <a href="#recursos">Recursos do Jogo</a>
-        <a href="#imagens">Imagens</a>
-        <a href="#personagens">Personagens</a>
-        <a href="#gameplay">Gameplay</a>
-        <a href="#comprar">Onde Comprar</a>
+        <ul>
+          <li><button id="btn-som" class="btn-som">🔊</button></li>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#sobre">História</a></li>
+          <li><a href="#personagens">Personagens</a></li>
+          <li><a href="#gameplay">Trailer</a></li>
+          <li>
+            <a
+              href="LINK_DA_STEAM_OU_LOJA"
+              target="_blank"
+              class="btn-comprar-nav"
+              >JOGAR AGORA</a
+            >
+          </li>
+        </ul>
       </nav>
     </header>
 
     <main>
-      <img class="capa-img" src="imagens/Slide 16_9 - 1.svg" />
+      <section id="hero">
+        <div class="hero-content">
+          <p class="hero-text">
+            entre em uma aventura mágica e misteriosa nesse jogo de<br />
+            mundo aberto, até conseguir resolver todos desafios e<br />
+            acordar do pesadelo.
+          </p>
+
+          <a
+            href="download/magic-nightmare.zip"
+            download="MagicNightmare-Setup.zip"
+            class="btn-instalar"
+          >
+            <img src="imagens/install.png" alt="Botão Instale" />
+          </a>
+        </div>
+
+        <div class="hero-scroll">
+          <a href="#sobre">
+            <img src="imagens/button-descer.png" alt="Seta para descer" />
+            <p>deslize para mais</p>
+          </a>
+        </div>
+      </section>
 
       <section id="sobre">
-        <h2></h2>
-        <img
-          class="sobre-img"
-          src="imagens/sobre o jogo.svg"
-          alt="Sobre o jogo"
-        />
+        <div class="sobre-container">
+          <div class="titulo-container">
+            <img
+              src="imagens/sobre-o-jogo.png"
+              alt="Sobre o Jogo"
+              class="titulo-sobre"
+            />
+          </div>
+
+          <div class="sobre-conteudo">
+            <div class="narrativa-caixa">
+              <h2 class="titulo-narrativa">NARRATIVA</h2>
+              <p class="texto-narrativa">
+                presa dentro de um tabuleiro antigo, chamado magic nightmare, em
+                um parque de diversões que parece ter saído de seus piores
+                pesadelos. alice precisa resolver os desafios para escapar, mas
+                a cada passo, o medo cresce e as criaturas que vivem ali se
+                aproximam. o jogo só acaba se ela conseguir vencer, ou se o
+                pesadelo decidir mantê-la para sempre. será que ela vai
+                conseguir acordar a tempo?
+              </p>
+            </div>
+
+            <div class="carrossel-caixa">
+              <img src="imagens/quarto-1.png" class="slide active" alt="Cenário: Quarto 1">
+              <img src="imagens/quarto-2.png" class="slide" alt="Cenário: Quarto 2">
+              <img src="imagens/quarto-3.png" class="slide" alt="Cenário: Quarto 3">
+              <img src="imagens/quarto-4.png" class="slide" alt="Cenário: Quarto 4">
+              
+              <img src="imagens/samba-1.png" class="slide" alt="Cenário: Brinquedo Samba">
+              <img src="imagens/samba-2.png" class="slide" alt="Cenário: Samba Detalhe">
+              <img src="imagens/carrinho-sorvete.png" class="slide" alt="Cenário: Carrinho de Sorvete">
+              <img src="imagens/sorvete.png" class="slide" alt="Item: Sorvete">
+              
+              <button id="btn-proximo">
+                <img src="imagens/passar-carrossel.png" alt="Próxima imagem">
+              </button>
+            </div>
       </section>
 
       <section id="recursos">
-        <h2></h2>
-        <img class="recursos-img" src="imagens/recursos.svg" alt="Recursos" />
-      </section>
+        <div class="recursos-container">
+          <div class="titulo-container">
+            <img
+              src="imagens/recursos.png"
+              alt="Recursos"
+              class="titulo-recursos scroll-anim"
+            />
+          </div>
 
-      <section id="imagens">
-        <h2></h2>
-        <div class="carrossel">
-          <button class="carrossel-btn left">&#10094;</button>
-          <img src="imagens/quarto 2.png" class="active" alt="Quarto 2" />
-          <img src="imagens/quarto 4.png" alt="Quarto 4" />
-          <img src="imagens/quarto 3.png" alt="Quarto 3" />
-          <img src="imagens/samba-1.png" alt="Tabuleiro" />
-          <img src="imagens/casa do terror.png" alt="Casa do Terror" />
-          <img src="imagens/sorvete.png" alt="Carro de Sorvete" />
-          <button class="carrossel-btn right">&#10095;</button>
+          <div class="cards-grid">
+            <img
+              src="imagens/box-1.png"
+              alt="Coletar Itens"
+              class="card-item scroll-anim"
+            />
+            <img
+              src="imagens/box-2.png"
+              alt="Quebrar Recordes"
+              class="card-item scroll-anim"
+            />
+            <img
+              src="imagens/box-3.png"
+              alt="Vencer Obstáculos"
+              class="card-item scroll-anim"
+            />
+          </div>
+
+          <p class="recursos-texto scroll-anim">
+            passeie pelo parque e utilize as ferramentas para ajudar a<br />
+            resolver os desafios, só cuidado para não se assustar muito !
+          </p>
         </div>
       </section>
 
       <section id="personagens">
-        <h2></h2>
-        <img
-          class="personagens-img"
-          src="imagens/personagens.svg"
-          alt="Personagens"
-        />
-      </section>
+        <div class="personagens-container">
+          <div class="titulo-container">
+            <img
+              src="imagens/personagens.png"
+              alt="Personagens"
+              class="titulo-personagens scroll-anim"
+            />
+          </div>
 
-      <section id="gameplay" class="gameplay-section">
-        <div class="gameplay-wrapper">
-          <img class="gameplay-img" src="imagens/gameplay.svg" alt="Gameplay" />
-          <iframe
-            src="https://www.youtube.com/embed/VXX1s5uRJI0"
-            title="Gameplay"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+          <div class="personagens-grid">
+            <img
+              src="imagens/sonito.png"
+              alt="Sonito"
+              class="card-personagem scroll-anim"
+            />
+
+            <img
+              src="imagens/alice.png"
+              alt="Alice"
+              class="card-personagem scroll-anim"
+            />
+
+            <img
+              src="imagens/sonito-terror.png"
+              alt="Sonito Terror"
+              class="card-personagem scroll-anim"
+            />
+          </div>
         </div>
       </section>
 
-      <section id="comprar">
-        <div class="botoes-compra">
-          <a href="https://store.steampowered.com/" target="_blank"
-            >Comprar na Steam</a
+      <section id="gameplay">
+        <div class="gameplay-container">
+          <div class="video-moldura scroll-anim">
+            <iframe
+              src="https://www.youtube.com/embed/VXX1s5uRJI0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+
+          <a
+            href="https://youtu.be/VXX1s5uRJI0?si=yIQ51iUzDUTJz_hc"
+            target="_blank"
+            class="btn-assistir scroll-anim"
           >
-          <a href="https://store.playstation.com/" target="_blank"
-            >Comprar na PlayStation Store</a
-          >
-          <a href="https://www.xbox.com/pt-BR/microsoft-store" target="_blank"
-            >Comprar na Xbox Live</a
-          >
+            <img src="imagens/assista-agora.png" alt="Assista Agora" />
+          </a>
         </div>
       </section>
 
-      <img class="fim-img" src="imagens/onde comprar e FAQ.svg" />
+      <footer>
+        <div class="footer-content">
+          <h2>FAÇA PARTE DESSE UNIVERSO MÁGICO !</h2>
+
+          <p>
+            entre nessa aventura imersiva e misteriosa, ajude a alice a
+            encontrar o caminho para longe desse pesadelo mágico.
+          </p>
+
+          <div class="social-icons">
+            <a
+              href="https://twitter.com/SEU_USER"
+              target="_blank"
+              class="social-btn"
+            >
+              <img src="imagens/x.png" alt="X" />
+            </a>
+
+            <a href="https://t.me/SEU_USER" target="_blank" class="social-btn">
+              <img src="imagens/telegram.png" alt="Telegram" />
+            </a>
+          </div>
+
+          <p class="copyright">© 2025 Magic Nightmare</p>
+        </div>
+      </footer>
     </main>
-
-    <footer>&copy; 2025 Magic NightMare - Todos os direitos reservados.</footer>
-
     <script src="script.js"></script>
   </body>
 </html>

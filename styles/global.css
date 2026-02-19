@@ -1,0 +1,47 @@
+/* --- RESET E FONTES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Pixellari";
+  src: url("../Pixellari.ttf") format("truetype"); /* Atenção ao ../ se a fonte ta na raiz */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- CONFIGURAÇÕES DO BODY --- */
+body {
+  margin: 0;
+  font-family: "Pixellari", sans-serif;
+  background-color: #452775; 
+  color: white;
+  cursor: url('../imagens/cursor.png') 0 0, auto; /* Caminho corrigido */
+}
+
+a, button, .btn-instalar, .hero-scroll {
+  cursor: url('../imagens/cursor.png') 0 0, pointer; 
+}
+
+/* Otimização de Performance: Fundo fixo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('../imagens/gameplay.png'); /* Caminho corrigido */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  will-change: transform; 
+}
+
+/* Responsividade Global do Cursor */
+@media (max-width: 900px) {
+  body, a, button { cursor: auto; }
+}

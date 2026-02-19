@@ -1,0 +1,101 @@
+/* --- SEÇÃO RECURSOS --- */
+#recursos {
+  width: 100%;
+  min-height: 80vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.recursos-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.titulo-recursos {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+}
+
+/* --- GRID DOS CARDS --- */
+.cards-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 80px; 
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 60px; 
+}
+
+.card-item {
+  width: auto;
+  max-width: 320px;
+  height: auto;
+  
+  /* --- A CORREÇÃO MÁGICA --- */
+  /* Aqui dizemos: Anime o Transform rápido (0.3s) E a Opacidade lenta (1.5s) */
+  transition: transform 0.3s ease, opacity 1.5s ease-out;
+}
+
+.card-item:hover {
+  transform: translateY(-10px);
+}
+
+/* O TRUQUE PARA SUBIR O CARD DO MEIO */
+.cards-grid .card-item:nth-child(2) {
+  margin-top: -60px; 
+}
+
+/* Texto final */
+.recursos-texto {
+  text-align: center;
+  font-size: 20px;
+  color: #e5b0ff;
+  max-width: 800px;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- DELAYS AJUSTADOS (Mais rápidos) --- */
+
+/* Título: Instantâneo */
+.titulo-recursos.visivel { transition-delay: 0s; }
+
+/* Box 1: Espera 0.2s (bem rapidinho) */
+.cards-grid .card-item:nth-child(1).visivel { transition-delay: 0.2s; }
+
+/* Box 2: Espera 0.5s */
+.cards-grid .card-item:nth-child(2).visivel { transition-delay: 0.5s; }
+
+/* Box 3: Espera 0.8s */
+.cards-grid .card-item:nth-child(3).visivel { transition-delay: 0.8s; }
+
+/* Texto: Aparece logo em seguida (1.0s) - Antes estava quase 2s! */
+.recursos-texto.visivel { transition-delay: 1.0s; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+  .cards-grid {
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 0;
+  }
+  
+  /* No celular, removemos o efeito de subir o card do meio */
+  .cards-grid .card-item:nth-child(2) {
+    margin-top: 0;
+  }
+
+  /* No celular, removemos os delays para não travar a rolagem */
+  .card-item, .recursos-texto {
+    transition-delay: 0s !important;
+  }
+}

@@ -1,0 +1,119 @@
+/* --- SEÇÃO GAMEPLAY --- */
+#gameplay {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* NOVO: Efeito de sombra no final da section */
+#gameplay::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* Altura da sombra */
+  
+  /* Gradiente: Transparente -> Roxo do Fundo */
+  background: linear-gradient(to bottom, transparent, #452775);
+  
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gameplay-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Importante para ficar em cima da sombra */
+}
+
+/* --- MOLDURA DO VÍDEO (A parte de trás) --- */
+.video-moldura {
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  
+  /* Cor do fundo (borda grossa) */
+  background-color: rgba(30, 15, 60, 0.85); /* Deixei um pouco mais escuro para destacar */
+  
+  /* AUMENTEI AQUI: Borda bem mais arredondada */
+  border-radius: 40px; 
+  
+  /* AUMENTEI AQUI: O Padding cria o espaço entre a borda roxa e o vídeo */
+  padding: 20px; 
+  
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6); /* Sombra mais forte */
+  
+  margin-bottom: -40px; /* Aumentei a sobreposição do botão */
+  z-index: 1;
+  
+  /* Importante para o vídeo não vazar da borda redonda */
+  box-sizing: border-box; 
+}
+
+/* O iframe agora respeita o padding da moldura */
+.video-moldura iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px; /* O próprio vídeo também ganha cantos redondos */
+  border: none;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8); /* Sombra interna para profundidade */
+}
+
+/* --- BOTÃO ASSISTA AGORA --- */
+.btn-assistir {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  display: block; /* Garante que o link ocupe espaço */
+}
+
+.btn-assistir img {
+  /* AUMENTEI AQUI: De 250px para 400px (ficou gigantão!) */
+  width: 400px; 
+  
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+  transition: filter 0.3s ease;
+}
+
+/* Efeito Hover */
+.btn-assistir:hover {
+  transform: scale(1.05) translateY(-5px); /* Sobe um pouquinho */
+}
+
+.btn-assistir:hover img {
+  /* Brilho rosa neon */
+  filter: drop-shadow(0 0 20px #ff69b4) brightness(1.2);
+}
+
+/* Animação de entrada (Scroll) */
+.scroll-anim {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+.scroll-anim.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .gameplay-container {
+    width: 95%; /* Ocupa quase a tela toda no celular */
+  }
+  .video-moldura {
+    padding: 10px; /* Borda mais fina no celular */
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .btn-assistir img {
+    width: 280px; /* Diminui um pouco no celular pra não estourar a tela */
+  }
+}

@@ -1,0 +1,119 @@
+.cine-header {
+  /* MUDANÇA PRINCIPAL: De absolute para fixed */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Z-Index altíssimo para ficar em cima de tudo (vídeo, cards, etc) */
+  z-index: 1000; 
+  
+  /* Gradiente inicial (transparente no topo) */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  
+  font-family: "Paytone One", sans-serif;
+  
+  /* Animação suave para quando a cor de fundo mudar */
+  transition: all 0.4s ease;
+}
+
+/* --- CLASSE QUE O JS VAI ADICIONAR --- */
+.cine-header.scrolled {
+  /* Quando rolar, o fundo vira roxo escuro sólido */
+  background: rgba(30, 15, 60, 0.95); 
+  
+  /* O menu fica um pouco mais compacto */
+  padding: 15px 50px; 
+  
+  /* Sombra para separar do conteúdo */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-area img {
+  width: 50px;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+  transition: width 0.3s ease;
+}
+
+/* Diminui o logo levemente ao rolar */
+.cine-header.scrolled .logo-area img {
+  width: 40px;
+}
+
+.cine-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.cine-header nav a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  transition: color 0.3s, text-shadow 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cine-header nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #e5b0ff, 0 0 20px #e5b0ff;
+}
+
+/* Botão Comprar no Menu */
+.btn-comprar-nav {
+  border: 2px solid #e5b0ff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  color: #e5b0ff !important;
+  background: rgba(80, 0, 150, 0.2);
+  transition: all 0.4s ease;
+}
+
+.btn-comprar-nav:hover {
+  background: #e5b0ff;
+  color: #000 !important;
+  box-shadow: 0 0 15px #e5b0ff;
+}
+
+.btn-som {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn-som:hover {
+  background: #e5b0ff;
+  border-color: #e5b0ff;
+  transform: scale(1.1);
+  color: #000;
+  box-shadow: 0 0 10px #e5b0ff;
+}
+
+@media (max-width: 900px) {
+  .cine-header nav { display: none; }
+  .cine-header { justify-content: center; }
+}
